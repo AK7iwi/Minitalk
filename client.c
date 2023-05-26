@@ -6,13 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:51 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/05/24 01:33:40 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:54:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int main ()
+int main (int argc, char **argv)
 {
-    printf("oui");
+	if (argc == 3)
+    	printf("%s",*argv);
 }

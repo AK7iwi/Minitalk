@@ -6,13 +6,25 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:28 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/05/24 01:33:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:17:41 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int main ()
+
+int print(char *msg)
 {
-    printf("oui");
+	int i ;
+	
+	i = getpid();
+	printf("%d",i);
+	printf("%s",msg);
+	return(i);
+}
+
+int main()
+{
+	print();
+	return(0);
 }

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 22:54:16 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/05/25 12:33:21 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:00:01 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 # define MINITALK_H
 
 # include <stdio.h>
-# include "./libft/libft.h"
+# include <stdlib.h>
+# include <unistd.h>
 # include <signal.h>
+# include "./libft/libft.h"
+
+int print(void);
 
 #endif
