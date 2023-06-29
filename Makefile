@@ -9,8 +9,7 @@ CLIENT_SRCS		= client.c
 SERVER_OBJS 	= $(SERVER_SRCS:.c=.o)
 CLIENT_OBJS		= $(CLIENT_SRCS:.c=.o)
 
-
-OBJS 			=  $(SERVER_OBJS) $(CLIENT_OBJS)
+OBJS 			=   $(SERVER_OBJS) $(CLIENT_OBJS)
 
 all:				$(SERVER_NAME) $(CLIENT_NAME)
 

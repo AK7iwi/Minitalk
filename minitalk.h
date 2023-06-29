@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 22:54:16 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/05/26 17:00:01 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/06/29 04:01:41 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <signal.h>
 # include "./libft/libft.h"
 
-int print(void);
+int print(char *msg);
+
 
 #endif
