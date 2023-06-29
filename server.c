@@ -6,23 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:28 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/06/29 05:32:01 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/06/29 12:46:29 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int print(char *msg)
-{
-	int i ;
-	
-	i = getpid();
-	printf("%d",i);
-	printf("%s",msg);
-	return(i);
-}
-
-void	sigint_handler(int signal)
+void	signal_handler(int signal)
 {
 	if (signal == SIGUSR1)
 		printf("\nSIGUSR1\n");
@@ -34,10 +24,13 @@ int main()
 {
 	struct sigaction	act;
 
+	ft_putnbr_fd(getpid(), 1);
+
 	bzero(&act, sizeof(act));
-	act.sa_handler = &sigint_handler;
+	act.sa_handler = &signal_handler;
 	sigaction(SIGUSR1, &act, NULL);
-	
-	printf("rf");
+	sigaction(SIGUSR2, &act, NULL);
+	while (1)
+    	pause(1);
 	return(0);
 }
