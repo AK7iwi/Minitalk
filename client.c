@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:51 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/06/30 15:53:26 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/06/30 16:15:40 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ void send_char(int pid, char *argv)
 int main (int argc, char **argv)
 {
 	if (argc == 3)
-	{
 		send_char(ft_atoi(argv[1]), argv[2]);
-	}
 	else 
 		return(0);
 	// sigemptyset();
