@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:51 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/06/29 13:54:20 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/06/29 18:24:21 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void char_to_bin(char c, int pid)
 	
 	while(bit <= shift)
     {
-         
           if ((c >> bit) & 1)
               kill(pid, SIGUSR1);
           else
@@ -32,14 +31,14 @@ void char_to_bin(char c, int pid)
 	}
 }
 
-
 int main (int argc, char **argv)
 {
 	if (argc == 3)
 	{
-		kill(ft_atoi(argv[1]),SIGUSR1);
-		kill(ft_atoi(argv[1]),SIGUSR2);
+		//boucle pour changer de caractere
+		char_to_bin(**argv);
 	}
 	else 
 		return(0);
+	sigemptyset();
 }
