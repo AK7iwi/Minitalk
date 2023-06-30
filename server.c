@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:28 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/06/29 18:20:54 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/06/30 15:40:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int main()
 	act.sa_handler = &signal_handler;
 	sigaction(SIGUSR1, &act, NULL);
 	sigaction(SIGUSR2, &act, NULL);
-	sigemptyset();
-	while (1)
-    	pause(1);
+	// sigemptyset();
+	// while (1)
+    // 	pause(1);
 	return(0);
 }
