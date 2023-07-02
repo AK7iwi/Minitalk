@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:51 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/06/30 16:15:40 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/07/02 22:56:15 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,16 @@
 void char_to_bin(int pid, char c)
 {
 	int bit;
-	int shift;
 
 	bit = 0;
-	shift = 7; 
 	
-	while(bit <= shift)
+	while(bit <= 7)
     {
           if ((c >> bit) & 1)
               kill(pid, SIGUSR1);
           else
               kill(pid, SIGUSR2);
 		bit++;
-		shift--;
 	}
 }
 
@@ -36,7 +33,7 @@ void send_char(int pid, char *argv)
 	size_t i;
 	
 	i = 0;
-	while(i < ft_strlen(argv))
+	while(i <= ft_strlen(argv))
 		char_to_bin(pid, argv[i++]);
 }
 
