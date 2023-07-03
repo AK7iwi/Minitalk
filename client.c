@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:51 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/07/02 22:56:15 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/07/02 23:06:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void char_to_bin(int pid, char c)
 
 	bit = 0;
 	
-	while(bit <= 7)
+	while(bit <= 7) 
     {
           if ((c >> bit) & 1)
               kill(pid, SIGUSR1);

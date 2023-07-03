@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 22:54:16 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/06/30 15:42:08 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/07/03 14:36:16 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <signal.h>
 # include "./libft/libft.h"
 
+void    bin_to_char(int signal, char c);
 void	signal_handler(int signal);
 
 void 	send_char(int pid, char *argv);
