@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:28 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/07/19 18:10:15 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/07/20 23:43:52 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,29 +21,23 @@ void bin_to_char(int signal, char c)
 	ft_putstr_fd("oui3",1);
 }
 
-void ft_stock_msg(char *c)
-{
-	static char *stock;
-	
-	stock = ft_strjoin(stock, c);
-	ft_putstr_fd(stock,1);
-}
-
 void	signal_handler_server(int signal, siginfo_t *info, void *context)
 {
 	char *c;
+	static char *stock = NULL;
 	static int bit = 0;
 	
 	(void)context;
-	c = 0;
 	bin_to_char(signal, *c);
+	c = malloc(sizeof(char) + 1);
 	if (bit == 8)
 	{
-		c = 0;
+		stock = ft_strjoin(stock, c);
+		ft_putstr_fd(c,1);
+		free(c);
 		bit = 0;
-		ft_stock_msg(c);
 	}
-	else 
+	else
 		bit++;
 	ft_putstr_fd("oui2",1);
 	kill(info->si_pid, SIGUSR1);
