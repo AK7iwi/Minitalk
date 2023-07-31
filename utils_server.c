@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:28:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/07/30 18:29:36 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/07/31 21:01:27 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ char	*ft_strjoin(char *s1, char s2)
 	int		i;
 
 	i = 0;
-
 	if (!s1)
 	{
 		s1 = (char *)(malloc(sizeof(char)));

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 22:54:16 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/07/30 18:11:26 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/07/31 18:45:55 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 # include <signal.h>
 
 void	signal_handler_server(int signal, siginfo_t * info, void *context);
-void	ft_stock_and_print_char(char c);
+void	ft_stock_msg(char c);
+void 	ft_print_and_free_msg(char *msg);
 
 
 void 	send_char(int pid, char *argv);

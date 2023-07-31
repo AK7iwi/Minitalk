@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:51 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/07/30 18:11:19 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/07/31 20:49:31 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void char_to_bin(int pid, char c)
         else
 			kill(pid, SIGUSR2);
 		bit++;
-		sleep(1);
+		usleep(2500);
 		while(a == 0)
 			pause();
 	}
@@ -40,10 +40,7 @@ void send_char(int pid, char *argv)
 	
 	i = 0;
 	while(i <= ft_strlen(argv))
-	{
 		char_to_bin(pid, argv[i++]);
-		// i++;
-	}
 }
 
 void	signal_handler_client(int signal, siginfo_t *info, void *context)

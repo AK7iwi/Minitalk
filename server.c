@@ -6,27 +6,28 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:28 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/07/30 22:46:56 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/07/31 20:58:36 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	ft_stock_and_print_char(char c)
+void ft_print_and_free_msg(char *msg)
+{
+	// ft_putstr_fd(msg,1);
+	free(msg);
+	ft_putchar_fd('\n', 1);
+}
+
+void	ft_stock_msg(char c)
 {
 	static char *msg = NULL;
 	char *cpy;
 
 	if(!c)
 	{
-		if(msg)
-			{
-				ft_putstr_fd(msg,1);
-				free(msg);
-				ft_putchar_fd('\n', 1);
-				ft_putstr_fd("tmp",1);
-				return ;
-			}
+		ft_print_and_free_msg(msg);
+		return ;
 	}
 	cpy = ft_strjoin(msg,c);
 	msg = ft_strdup(cpy);
@@ -44,7 +45,8 @@ void	signal_handler_server(int signal, siginfo_t *info, void *context)
 		c <<= 1;
 	if (bit == 8)
 	{
-		ft_stock_and_print_char(c);
+		ft_putchar_fd(c,1);
+		ft_stock_msg(c);
 		bit = 1;
 		c = 0;
 	}
