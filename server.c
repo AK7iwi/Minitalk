@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:28 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/07/29 03:00:42 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/07/30 22:46:56 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_stock_and_print_char(char c)
 {
 	static char *msg = NULL;
 	char *cpy;
-	int i;
 
 	if(!c)
 	{
@@ -29,31 +28,14 @@ void	ft_stock_and_print_char(char c)
 				return ;
 			}
 	}
-	// if (!msg)
-	// {
-	// 	msg = (char *)(malloc(sizeof(char)));
-	// 	if (!msg)
-	// 		return ;
-	// 	msg[0] = '\0';
-	// }
-	cpy = (char *)malloc(sizeof(char) * (ft_strlen(msg) + 2));
-	if (!cpy)
-		return ;
-	i = 0;
-	while (msg[i])
-	{
-		cpy[i] = msg[i];
-		i++;
-	}
-	cpy[i++] = c;
-	cpy[i] = '\0';
+	cpy = ft_strjoin(msg,c);
 	msg = ft_strdup(cpy);
 }
 
 void	signal_handler_server(int signal, siginfo_t *info, void *context)
 {	
 	static int bit = 1;
-	static unsigned char c = 0;
+	static char c = 0;
 	
 	(void)context;
 	if (signal == SIGUSR1)
@@ -84,8 +66,6 @@ int main()
 	sigaction(SIGUSR1, &act, NULL);
 	sigaction(SIGUSR2, &act, NULL);
 	while (1)
-	{
     	pause();
-	}
 	return(0);
 }
