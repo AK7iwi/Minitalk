@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:28 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/08/02 16:08:32 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/08/04 11:16:08 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void ft_print_and_free_msg(char *msg)
 {
-	// ft_putstr_fd(msg,1);
+	ft_putstr_fd(msg,1);
 	free(msg);
 	ft_putchar_fd('\n', 1);
 }
@@ -39,10 +39,10 @@ void	signal_handler_server(int signal, siginfo_t *info, void *context)
 	static char c = 0;
 	
 	(void)context;
-
+	// (void)info;
 	if (bit > 7)
 	{
-		ft_putchar_fd(c,1);
+		// ft_putchar_fd(c,1);
 		ft_stock_msg(c);
 		bit = 0;
 		c = 0;
@@ -53,6 +53,7 @@ void	signal_handler_server(int signal, siginfo_t *info, void *context)
 		c = (c << 1) | 1;
 	else if(signal == SIGUSR2)
 		c <<= 1;
+	// kill(info->si_pid, SIGUSR1);
 	kill(info->si_pid, SIGUSR1);	
 }
 

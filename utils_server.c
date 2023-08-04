@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:28:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/07/31 21:01:27 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/08/04 10:14:36 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ size_t	ft_strlen(char *s)
 	size_t	i;
 
 	i = 0;
-	if(!s)
-		return(0);
+	// if(!s)
+	// 	return(0);
 	while (s[i])
 		i++;
 	return (i);
