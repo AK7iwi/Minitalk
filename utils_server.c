@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:28:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/08/06 04:08:05 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/08/07 00:37:34 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,11 @@ void	ft_putchar_fd(char c, int fd)
 
 size_t	ft_strlen(char *s)
 {
-	
 	size_t	i;
 
 	i = 0;
 	if (!s)
-		return(0);
+		return (0);
 	while (s[i])
 		i++;
 	return (i);
@@ -72,7 +71,6 @@ char	*ft_strjoin(char *s1, char c)
 			return (NULL);
 		s1[0] = '\0';
 	}
-	
 	dest = malloc(sizeof(char) * (ft_strlen(s1) + 2));
 	if (!dest)
 		return (free(s1), NULL);
@@ -83,7 +81,5 @@ char	*ft_strjoin(char *s1, char c)
 	}
 	dest[i++] = c;
 	dest[i] = '\0';
-	
-	free(s1);
-	return (dest);
+	return (free(s1), dest);
 }

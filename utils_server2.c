@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 00:06:53 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/08/06 02:16:38 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/08/07 00:37:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ char	*ft_strdup(char *s)
 		i++;
 	}
 	dest[i] = '\0';
-	// return (dest);
 	return (free(s), dest);
 }
