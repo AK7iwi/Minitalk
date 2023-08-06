@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 00:06:53 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/07/31 21:00:48 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/08/06 02:16:38 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(char *s)
 
 	dest = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!dest)
-		return (NULL);
+		return (free(s), NULL);
 	i = 0;
 	while (i < ft_strlen(s))
 	{
@@ -27,5 +27,6 @@ char	*ft_strdup(char *s)
 		i++;
 	}
 	dest[i] = '\0';
+	// return (dest);
 	return (free(s), dest);
 }

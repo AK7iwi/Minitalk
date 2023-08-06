@@ -6,31 +6,23 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:28 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/08/04 11:16:08 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/08/06 04:30:50 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void ft_print_and_free_msg(char *msg)
-{
-	ft_putstr_fd(msg,1);
-	free(msg);
-	ft_putchar_fd('\n', 1);
-}
-
 void	ft_stock_msg(char c)
 {
 	static char *msg = NULL;
-	char *cpy;
 
-	if(!c)
-	{
-		ft_print_and_free_msg(msg);
-		return ;
+	if (c)
+		msg = ft_strjoin(msg, c);
+	else {
+		ft_putstr_fd(msg, 1);
+		free(msg);
+		msg = NULL;
 	}
-	cpy = ft_strjoin(msg,c);
-	msg = ft_strdup(cpy);
 }
 
 void	signal_handler_server(int signal, siginfo_t *info, void *context)
@@ -39,22 +31,19 @@ void	signal_handler_server(int signal, siginfo_t *info, void *context)
 	static char c = 0;
 	
 	(void)context;
-	// (void)info;
-	if (bit > 7)
+	if (signal == SIGUSR1)
+		c = (c << 1) | 1;
+	else if(signal == SIGUSR2)
+		c <<= 1;
+	if (bit == 7)
 	{
-		// ft_putchar_fd(c,1);
 		ft_stock_msg(c);
 		bit = 0;
 		c = 0;
 	}
 	else
 		bit++;
-	if (signal == SIGUSR1)
-		c = (c << 1) | 1;
-	else if(signal == SIGUSR2)
-		c <<= 1;
-	// kill(info->si_pid, SIGUSR1);
-	kill(info->si_pid, SIGUSR1);	
+	kill(info->si_pid, SIGUSR1);
 }
 
 int main()

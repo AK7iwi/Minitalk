@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:51 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/08/04 11:03:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/08/06 02:43:52 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ void char_to_bin(int pid, char c)
 {
 	int bit;
 
-	bit = 0;
-	while(bit <= 7)
+	bit = 7;
+	while(bit >= 0)
     {
 		a = 0;
 		if ((c >> bit) & 1)
 			kill(pid, SIGUSR1);
         else
 			kill(pid, SIGUSR2);
-		bit++;
+		bit--;
 		sleep(1);
 		while(a == 0)
 			pause();
@@ -54,9 +54,9 @@ void	signal_handler_client(int signal, siginfo_t *info, void *context)
 int main (int argc, char **argv)
 {
 	struct sigaction	act;
-
-    act.sa_sigaction = signal_handler_client;
-    act.sa_flags = SA_SIGINFO;
+	
+	act.sa_sigaction = signal_handler_client;
+	act.sa_flags = SA_SIGINFO;
 	sigemptyset(&act.sa_mask);
 	sigaction(SIGUSR1, &act, NULL);
 	// sigaction(SIGUSR2, &act, NULL);
