@@ -13,7 +13,7 @@ OBJS 			=   $(SERVER_OBJS) $(CLIENT_OBJS)
 all:				$(SERVER_NAME) $(CLIENT_NAME)
 
 $(SERVER_NAME):		$(OBJS)
-					$(CC) -g3 -o $(SERVER_NAME) $(SERVER_SRCS) $(CFLAGS) 
+					$(CC) -o $(SERVER_NAME) $(SERVER_SRCS) $(CFLAGS) 
 
 $(CLIENT_NAME):		$(OBJS) 
 					$(CC) -o $(CLIENT_NAME) $(CLIENT_SRCS) $(CFLAGS)  
