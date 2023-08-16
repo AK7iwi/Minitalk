@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 22:54:16 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/08/16 22:04:19 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/08/16 22:11:30 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 void	signal_handler_server(int signal, siginfo_t *info, void *context);
 void	ft_stock_msg(char c);
-void	ft_print_and_free_msg(char *msg);
 
 void	send_char(int pid, char *argv);
 void	char_to_bin(int pid, char c);
