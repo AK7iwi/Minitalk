@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 22:54:16 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/08/07 00:26:59 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/08/16 22:04:19 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 char	*ft_strjoin(char *s1, char s2);
-char	*ft_strdup(char *s);
 
 #endif
