@@ -8,14 +8,13 @@ CLIENT_SRCS		= client.c utils_client.c
 SERVER_OBJS 	= $(SERVER_SRCS:.c=.o)
 CLIENT_OBJS		= $(CLIENT_SRCS:.c=.o)
 
-OBJS 			=   $(SERVER_OBJS) $(CLIENT_OBJS)
 
 all:				$(SERVER_NAME) $(CLIENT_NAME)
 
-$(SERVER_NAME):		$(OBJS)
+$(SERVER_NAME):		$(SERVER_OBJS)
 					$(CC) -o $(SERVER_NAME) $(SERVER_SRCS) $(CFLAGS) 
 
-$(CLIENT_NAME):		$(OBJS) 
+$(CLIENT_NAME):		$(CLIENT_OBJS) 
 					$(CC) -o $(CLIENT_NAME) $(CLIENT_SRCS) $(CFLAGS)  
 
 clean:
