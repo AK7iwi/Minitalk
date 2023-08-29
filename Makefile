@@ -3,8 +3,8 @@ RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes
 SERVER_NAME 	= server
 CLIENT_NAME		= client 
-SERVER_SRCS		= ./srcs/server.c ./utils/utils_server.c
-CLIENT_SRCS		= ./srcs/client.c ./utils/utils_client.c
+SERVER_SRCS		= ./srcs/server.c ./srcs//utils/utils_server.c
+CLIENT_SRCS		= ./srcs/client.c ./srcs/utils/utils_client.c
 SERVER_OBJS 	= $(SERVER_SRCS:.c=.o)
 CLIENT_OBJS		= $(CLIENT_SRCS:.c=.o)
 
