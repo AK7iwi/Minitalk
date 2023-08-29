@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 01:21:51 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/08/07 00:38:11 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/08/29 15:28:21 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	char_to_bin(int pid, char c)
 		else
 			kill(pid, SIGUSR2);
 		bit--;
-		sleep (1);
 		while (g_a == 0)
 			pause();
 	}
