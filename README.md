@@ -8,13 +8,18 @@ Minitalk establishes communication between a client and a server using signals. 
 
 ## Usage
 
-Compile the client and server programs, then run them on separate terminals:
+Compile the client and server programs, then run them on separate terminals. Obviously the server first.
 
 ```bash
 make
 ./server
+```
+
+```bash
+make
 ./client pid "Your message here"
 ```
+
 ## Subject
 
 [minitalk.en.subject.pdf](https://github.com/AK7iwi/Minitalk/files/14182054/minitalk.en.subject.pdf)
