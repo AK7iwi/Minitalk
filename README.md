@@ -1,10 +1,19 @@
 # Minitalk
 
-A simple client-server communication project using signals in C.
+A simple client-server communication project in C using signals for interprocess communication.
+
+## Overview
+
+Minitalk establishes communication between a client and a server using signals. The client sends a string to the server, and the server displays the received message.
 
 ## Usage
 
-Compile the client and server programs, then run them on separate terminals for communication.
+Compile the client and server programs, then run them on separate terminals:
+
+```bash
+make
+./server
+./client "Your message here"
 
 
 [minitalk.en.subject.pdf](https://github.com/AK7iwi/Minitalk/files/14182054/minitalk.en.subject.pdf)
